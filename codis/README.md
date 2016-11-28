@@ -4,8 +4,8 @@
 只需要在有codis-fe的服务器上添加template即可。
 
 ## 依赖
+- awk/curl/xargs 
 - jq  [网址](https://stedolan.github.io/jq/), `/usr/local/bin/jq` # 请换成自己的目录
 - redis-cli  `/opt/app/gopath/bin/redis-cli` # 请换成自己的目录
-- awk/curl/xargs 
 - codis-fe.json的配置文件 `/opt/app/conf/codis-fe.json` # 请换成自己的目录
 
