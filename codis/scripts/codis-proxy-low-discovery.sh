@@ -3,22 +3,20 @@
 JQ=/usr/local/bin/jq
 codis_dis() {
     port=($(cat /opt/app/conf/codis-fe.json |$JQ '.[].dashboard'|awk -F'["]' '{print "http://" $2 "/topom"}'|xargs curl -s |$JQ .stats.proxy.models[].admin_addr |awk -F'["]' '{print $2}'))
-            printf '{\n'
-            printf '\t"data":[\n'
-               for key in ${!port[@]}
-                   do
-                       if [[ "${#port[@]}" -gt 1 && "${key}" -ne "$((${#port[@]}-1))" ]];then
-              socket=`ps aux|grep ${port[${key}]}|grep -v grep|awk -F '=' '{print $10}'|cut -d ' ' -f 1`
-                          printf '\t {\n'
-                          printf "\t\t\t\"{#PROXYPORT}\":\"${port[${key}]}\"},\n"
-                     else [[ "${key}" -eq "((${#port[@]}-1))" ]]
-              socket=`ps aux|grep ${port[${key}]}|grep -v grep|awk -F '=' '{print $10}'|cut -d ' ' -f 1`
-                          printf '\t {\n'
-                          printf "\t\t\t\"{#PROXYPORT}\":\"${port[${key}]}\"}\n"
-                       fi
-               done
-                          printf '\t ]\n'
-                          printf '}\n'
+    num=($(cat /opt/app/conf/codis-fe.json |$JQ '.[].dashboard'|awk -F'["]' '{print "http://" $2 "/topom"}'|xargs curl -s |$JQ .stats.proxy.models[].admin_addr |awk -F'["]' '{print $2}' |wc -l))
+    printf '{\n'
+    printf '\t"data":[\n'
+    for key in ${port[@]}
+    do
+        num=$(expr $num - 1)
+        if [ $num -ne 0 ];then
+            printf "\t\t{\"{#PROXYPORT}\":\""${key}"\"},\n"
+        else 
+	    printf "\t\t{\"{#PROXYPORT}\":\""${key}"\"}\n"
+        fi
+    done
+    printf '\t]\n'
+    printf '}\n'
 }
 
 codis_dis
