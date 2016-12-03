@@ -11,8 +11,8 @@ codis_dis() {
         num=$(expr $num - 1)
         if [ $num -ne 0 ];then
             printf "\t\t{\"{#PROXYPORT}\":\""${key}"\"},\n"
-        else 
-	    printf "\t\t{\"{#PROXYPORT}\":\""${key}"\"}\n"
+        else
+        printf "\t\t{\"{#PROXYPORT}\":\""${key}"\"}\n"
         fi
     done
     printf '\t]\n'
