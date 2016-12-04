@@ -1,5 +1,6 @@
 # zabbix-templates
-zabbix templates
+
+zabbix自动发现模板集合，每个目录可以单独使用。
 
 ### zabbix 版本
 ```
