@@ -11,12 +11,12 @@ zabbix 3.0
 /opt/scripts/
 ```
 
-### zabbix配置目录
+### 配置文件目录
 ```
 /etc/zabbix/zabbix_agentd.d/
 ```
 
-### template
+### 模板导入
 ```
 格式为xml
 在 "Configuration" -->  "Templates" --> "import" 进行导入
