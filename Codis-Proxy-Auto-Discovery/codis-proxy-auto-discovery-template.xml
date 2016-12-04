@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-11-28T00:56:00Z</date>
+    <date>2016-12-04T12:57:56Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -30,7 +30,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>codis_proxy_low_discovery</key>
-                    <delay>600</delay>
+                    <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -65,7 +65,7 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Codis $1 proxy fails</name>
+                            <name>Codis Proxy $1 fails</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -109,7 +109,51 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 proxy qps</name>
+                            <name>Codis Proxy $1 online status</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>codis_proxy_stats[{#PROXYPORT},online]</key>
+                            <delay>60</delay>
+                            <history>7</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Codis Proxy Low Level Discovery</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Codis Proxy $1 qps</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -153,7 +197,7 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 proxy total</name>
+                            <name>Codis Proxy $1 total</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -200,7 +244,7 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template Codis Proxy Auto Discovery:codis_proxy_stats[{#PROXYPORT},qps].last()}&gt;1000</expression>
-                            <name>{HOST.NAME} Codis proxy {#PROXYPORT} 's qps &gt; 1000</name>
+                            <name>Codis Proxy {#PROXYPORT} 's qps &gt; 1000</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -208,10 +252,20 @@
                             <type>0</type>
                             <dependencies/>
                         </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template Codis Proxy Auto Discovery:codis_proxy_stats[{#PROXYPORT},online].str(true)}=0</expression>
+                            <name>Codis Proxy {#PROXYPORT}  is not running!</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                            <dependencies/>
+                        </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Codis {#PROXYPORT} fails</name>
+                            <name>Codis Proxy {#PROXYPORT} fails</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -243,7 +297,7 @@
                             </graph_items>
                         </graph_prototype>
                         <graph_prototype>
-                            <name>Codis {#PROXYPORT} QPS</name>
+                            <name>Codis Proxy {#PROXYPORT} QPS</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -275,7 +329,7 @@
                             </graph_items>
                         </graph_prototype>
                         <graph_prototype>
-                            <name>Codis {#PROXYPORT} total</name>
+                            <name>Codis Proxy {#PROXYPORT} total</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
