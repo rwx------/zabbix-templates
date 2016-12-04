@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-12-04T12:57:35Z</date>
+    <date>2016-12-04T14:38:25Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -341,7 +341,7 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Request rate</name>
+                            <name>Codis $1 Request Total</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -385,7 +385,7 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Connection rate</name>
+                            <name>Codis $1 Connection Received Total</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
