@@ -1,7 +1,7 @@
 # zabbix自动发现方式监控codis集群的codis-server实例
 ```
 基于zabbix的自动发现，自动监控，自动报警，不需要人工干预。
-只需要在有codis-fe的服务器上添加template即可。
+只需要在有codis-fe的服务器上添加模板即可。
 ```
 
 ### 版本
