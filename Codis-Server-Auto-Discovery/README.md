@@ -13,11 +13,13 @@ codis:  3.1
 ### 依赖
 ```
 - awk/curl/xargs 
-- jq  [网址](https://stedolan.github.io/jq/), `/usr/local/bin/jq` # 请换成自己的目录
-- redis-cli  `/opt/app/gopath/bin/redis-cli` # 请换成自己的目录
-- codis-fe.json的配置文件 `/opt/app/conf/codis-fe.json` # 请换成自己的目录
+- jq (https://stedolan.github.io/jq/), "/usr/local/bin/jq" # 请换成自己的目录
+- redis-cli "/opt/app/gopath/bin/redis-cli"                # 请换成自己的目录
+- codis-fe 的配置文件 "/opt/app/conf/codis-fe.json"        # 请换成自己的目录
+```
 
 ### 监控项
+```
 - blocked_clients                        # 被阻塞的客户端数
 - connected_clients                      # 当前连接的客户端数
 - total_connections_received             # 自启动起连接的总数
