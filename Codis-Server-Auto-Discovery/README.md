@@ -1,13 +1,17 @@
 # zabbix自动发现方式监控codis集群的codis-server实例
-
+```
 基于zabbix的自动发现，自动监控，自动报警，不需要人工干预。
 只需要在有codis-fe的服务器上添加template即可。
+```
 
 ### 版本
+```
 zabbix: 3.0+
 codis:  3.1
+```
 
 ### 依赖
+```
 - awk/curl/xargs 
 - jq  [网址](https://stedolan.github.io/jq/), `/usr/local/bin/jq` # 请换成自己的目录
 - redis-cli  `/opt/app/gopath/bin/redis-cli` # 请换成自己的目录
@@ -26,16 +30,21 @@ codis:  3.1
 - mem_ratio                              # 内存比率，已用内存占配置内存的比率 
 - used_memory_rss                        # 系统给redis分配的内存（即常驻内存）
 - net.tcp.port[{#CODISIP},{#CODISPORT}]  # 端口是否存活
+```
 
 ### 告警项
-- 端口存活
+```
+- 端口不存活
 - 内存比率超过70%
+```
 
 ### 图表
+```
 - 连接图，显示客户端连接情况
 - keys图，显示evicted_keys和expired_keys
 - 状态图，显示codis是否存活
 - 内存图，显示codis使用内存情况
+```
 
 ### 自动发现周期
 ```
