@@ -19,7 +19,7 @@ zabbix 3.0
 
 ### 模板导入
 ```
-格式为xml
+模板格式为xml
 在 "Configuration" -->  "Templates" --> "import" 进行导入
 在 "配置"  --> "模板" --> "导入" 进行导入
 ```
