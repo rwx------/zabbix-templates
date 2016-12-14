@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-12-04T14:38:25Z</date>
+    <date>2016-12-14T03:10:37Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -77,13 +77,13 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Codis $1 Blocked clients</name>
+                            <name>Codis Server $1 Clients Blocked</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>codis_server_stats[{#CODISSERVER},blocked_clients]</key>
-                            <delay>60</delay>
+                            <delay>180</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -121,13 +121,13 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Connected clients</name>
+                            <name>Codis Server $1 Clients Connected</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>codis_server_stats[{#CODISSERVER},connected_clients]</key>
-                            <delay>60</delay>
+                            <delay>180</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -165,13 +165,13 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Evicted_keys</name>
+                            <name>Codis Server $1 Stats evicted_keys</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>codis_server_stats[{#CODISSERVER},evicted_keys]</key>
-                            <delay>60</delay>
+                            <delay>180</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -209,12 +209,56 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Expired keys</name>
+                            <name>Codis Server $1 Stats expired_keys</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>codis_server_stats[{#CODISSERVER},expired_keys]</key>
+                            <delay>180</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Codis Server Low Level Discovery</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Codis Server $1 Stats instantaneous_ops_per_sec</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>codis_server_stats[{#CODISSERVER},instantaneous_ops_per_sec]</key>
                             <delay>60</delay>
                             <history>7</history>
                             <trends>365</trends>
@@ -253,7 +297,51 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Used memory ratio</name>
+                            <name>Codis Server $1 Memory maxmemory</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>codis_server_stats[{#CODISSERVER},maxmemory]</key>
+                            <delay>3600</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Codis Server Low Level Discovery</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Codis Server $1 Memory used ratio</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -297,13 +385,13 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Role</name>
+                            <name>Codis Server $1 Info Version</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>codis_server_stats[{#CODISSERVER},role]</key>
-                            <delay>60</delay>
+                            <key>codis_server_stats[{#CODISSERVER},redis_version]</key>
+                            <delay>3600</delay>
                             <history>7</history>
                             <trends>0</trends>
                             <status>0</status>
@@ -341,13 +429,57 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Request Total</name>
+                            <name>Codis Server $1 Info Role</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>codis_server_stats[{#CODISSERVER},role]</key>
+                            <delay>600</delay>
+                            <history>7</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Codis Server Low Level Discovery</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Codis Server $1 Stats  total_commands_processed</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>codis_server_stats[{#CODISSERVER},total_commands_processed]</key>
-                            <delay>60</delay>
+                            <delay>180</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -385,20 +517,20 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Connection Received Total</name>
+                            <name>Codis Server $1 Stats total_keys</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>codis_server_stats[{#CODISSERVER},total_connections_received]</key>
-                            <delay>60</delay>
+                            <key>codis_server_stats[{#CODISSERVER},total_keys]</key>
+                            <delay>180</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units/>
-                            <delta>1</delta>
+                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -429,13 +561,13 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Uptime in seconds</name>
+                            <name>Codis Server $1 Info Uptime in seconds</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>codis_server_stats[{#CODISSERVER},uptime_in_seconds]</key>
-                            <delay>60</delay>
+                            <delay>600</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -473,13 +605,13 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Used memory</name>
+                            <name>Codis Server $1 Memory used</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>codis_server_stats[{#CODISSERVER},used_memory]</key>
-                            <delay>60</delay>
+                            <delay>180</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -517,13 +649,13 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis $1 Used_memory_rss</name>
+                            <name>Codis Server $1 Memory used rss</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>codis_server_stats[{#CODISSERVER},used_memory_rss]</key>
-                            <delay>60</delay>
+                            <delay>180</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
@@ -561,7 +693,7 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Codis {#CODISSERVER} Status</name>
+                            <name>Codis Server {#CODISSERVER} Info Status</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -608,7 +740,7 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template Codis Server Auto Discovery:net.tcp.port[{#CODISIP},{#CODISPORT}].last()}&lt;&gt;1</expression>
-                            <name>{HOST.NAME} Codis {#CODISSERVER} is not running</name>
+                            <name>Codis Server {#CODISSERVER} is not running</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -618,7 +750,7 @@
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Template Codis Server Auto Discovery:codis_server_stats[{#CODISSERVER},mem_ratio].last()}&gt;70</expression>
-                            <name>{HOST.NAME} Codis  {#CODISSERVER} used &gt; 70</name>
+                            <name>Codis Server  {#CODISSERVER} used &gt; 70</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -626,78 +758,20 @@
                             <type>0</type>
                             <dependencies/>
                         </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template Codis Server Auto Discovery:codis_server_stats[{#CODISSERVER},role].diff()}=1</expression>
+                            <name>Codis Server {#CODISSERVER} 主从角色改变了！</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description/>
+                            <type>0</type>
+                            <dependencies/>
+                        </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Codis {#CODISSERVER} Connections</name>
-                            <width>900</width>
-                            <height>200</height>
-                            <yaxismin>0.0000</yaxismin>
-                            <yaxismax>100.0000</yaxismax>
-                            <show_work_period>1</show_work_period>
-                            <show_triggers>1</show_triggers>
-                            <type>0</type>
-                            <show_legend>1</show_legend>
-                            <show_3d>0</show_3d>
-                            <percent_left>0.0000</percent_left>
-                            <percent_right>0.0000</percent_right>
-                            <ymin_type_1>0</ymin_type_1>
-                            <ymax_type_1>0</ymax_type_1>
-                            <ymin_item_1>0</ymin_item_1>
-                            <ymax_item_1>0</ymax_item_1>
-                            <graph_items>
-                                <graph_item>
-                                    <sortorder>0</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>C80000</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>Template Codis Server Auto Discovery</host>
-                                        <key>codis_server_stats[{#CODISSERVER},blocked_clients]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
-                                    <sortorder>1</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>00C800</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>Template Codis Server Auto Discovery</host>
-                                        <key>codis_server_stats[{#CODISSERVER},connected_clients]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
-                                    <sortorder>2</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>0000C8</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>Template Codis Server Auto Discovery</host>
-                                        <key>codis_server_stats[{#CODISSERVER},total_connections_received]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
-                                    <sortorder>3</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>C800C8</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>Template Codis Server Auto Discovery</host>
-                                        <key>codis_server_stats[{#CODISSERVER},total_commands_processed]</key>
-                                    </item>
-                                </graph_item>
-                            </graph_items>
-                        </graph_prototype>
-                        <graph_prototype>
-                            <name>Codis {#CODISSERVER} keys</name>
+                            <name>Codis Server {#CODISSERVER} keys</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -738,10 +812,22 @@
                                         <key>codis_server_stats[{#CODISSERVER},expired_keys]</key>
                                     </item>
                                 </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>2774A4</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template Codis Server Auto Discovery</host>
+                                        <key>codis_server_stats[{#CODISSERVER},total_keys]</key>
+                                    </item>
+                                </graph_item>
                             </graph_items>
                         </graph_prototype>
                         <graph_prototype>
-                            <name>Codis {#CODISSERVER} status</name>
+                            <name>Codis Server {#CODISSERVER} QPS</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -767,13 +853,13 @@
                                     <type>0</type>
                                     <item>
                                         <host>Template Codis Server Auto Discovery</host>
-                                        <key>net.tcp.port[{#CODISIP},{#CODISPORT}]</key>
+                                        <key>codis_server_stats[{#CODISSERVER},instantaneous_ops_per_sec]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
                         </graph_prototype>
                         <graph_prototype>
-                            <name>Codis {#CODISSERVER} Used memory</name>
+                            <name>Codis Server  {#CODISSERVER} Used memory</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -812,6 +898,18 @@
                                     <item>
                                         <host>Template Codis Server Auto Discovery</host>
                                         <key>codis_server_stats[{#CODISSERVER},used_memory_rss]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>2774A4</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template Codis Server Auto Discovery</host>
+                                        <key>codis_server_stats[{#CODISSERVER},maxmemory]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
