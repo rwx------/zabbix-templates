@@ -1,0 +1,13 @@
+/data/www/qbaobei-queue/Queue.php DelMC
+/data/www/qbaobei-queue/Queue.php SendSMS
+/data/www/qbaobei-queue/Queue.php RegHX
+/data/www/qbaobei-queue/Queue.php AppPush#2
+/data/www/qbaobei-queue/Queue.php AppPushEnterprise
+/data/www/qbaoting-queue/Queue.php SendSMS
+/data/www/qbaoting-queue/Queue.php DelMC
+/data/www/qbaoting-queue/Queue.php SetFavorite
+/data/www/qbaoting-queue/Queue.php AppPush#2
+/data/www/qbaoting-queue/Queue.php AppPushEnterprise
+/data/www/qbaoting-queue/Queue.php SetPlayCount
+/data/www/qbaoting-queue/Queue.php SendNotice
+/data/www/qbaoting-queue/Queue.php SearchStory
